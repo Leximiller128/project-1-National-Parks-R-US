@@ -13,10 +13,10 @@ My enthusiasm is burgeoning for extreme sports and I’d like to find an easy tr
 Additionally, I enjoy camping! Where can I find fun and clean camp sites in my local National Parks?
 
 Roles/Wireframe:
-Lexi- GitHub Guru, JS Co-Primary
-Seth- HTML, Project Manager
-Garret- API Wizard, JS Co-Primary
-Kaleb- CSS, Presentation Proctor
+Lexi- GitHub Guru, JS Co-Primary --GitHub: Leximiller128
+Seth- HTML, Project Manager --GitHub: Capt-Turner
+Garret- API Wizard, JS Co-Primary --GitHub: Garretn4
+Kaleb- CSS, Presentation Proctor --GitHub: Kalebritt
 
 API:
 Hiking APIs
