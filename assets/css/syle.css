@@ -1,4 +1,5 @@
-  background-color: antiquewhite;
+#container {
+    background-color: antiquewhite;
   background-image: url('https://source.unsplash.com/1600x900/?landscape');
 }
 
