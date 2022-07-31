@@ -1,3 +1,7 @@
 .container {
-  background-color: antiquewhite;
+  background-color: fuchsia;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
 }
