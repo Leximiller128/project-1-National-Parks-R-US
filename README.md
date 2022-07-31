@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-# project-1
-
-=======
-
-=======
->>>>>>> main
 # project-1: Collaborators: Lexi M., Seth T., Garret N., Kaleb R.
 
 Team Name: Project-1 on GitHub- National Park Fiends
@@ -37,10 +28,6 @@ Information about our nation’s lovely National Parks
 
 Timeline:
 
-<<<<<<< HEAD
 Deploy the skeleton:
 
-> > > > > > > main
-=======
-Deploy the skeleton:
->>>>>>> main
+
