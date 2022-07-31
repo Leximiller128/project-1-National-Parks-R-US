@@ -40,4 +40,5 @@ Timeline:
 
 Deploy the skeleton:
 
+[Hikers-R-US](https://leximiller128.github.io/project-1-Hikers-R-US/)
 
