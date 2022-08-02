@@ -11,6 +11,10 @@ p {
   color: black;
 }
 
+form {
+  margin: auto;
+}
+
 html {
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
 }
