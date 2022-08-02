@@ -12,11 +12,16 @@ p {
 }
 
 form {
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
 }
 
 html {
-  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-image: url("https://source.unsplash.com/1600x1600/?landscape");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
