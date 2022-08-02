@@ -1,10 +1,5 @@
 #container {
-<<<<<<< HEAD
-    background-color: antiquewhite;
-  background-image: url('https://source.unsplash.com/1600x900/?landscape');
-=======
-  background-color: fuchsia;
->>>>>>> kaleb
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
 }
 
 h1 {
