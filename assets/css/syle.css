@@ -7,10 +7,6 @@
 
 .title {
   text-align: center;
-  color: white;
-}
-
-.title:hover {
   color: black;
 }
 
@@ -18,19 +14,15 @@ p {
   text-align: center;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
-}
-
-p:hover {
   color: black;
 }
 
-#form {
+/* .columns {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 5px;
-}
+} */
 
 html {
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
