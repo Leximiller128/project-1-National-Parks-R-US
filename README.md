@@ -2,11 +2,11 @@
 
 ## Team Name: Project-1 on GitHub- National Park Fiends
 
-## Title: 
+## Title:
 
 National Parks and Bikes R Us
 
-## Description: 
+## Description:
 
 Mountain Hiker Fiends is an app that offers a user local hiking trails and the weather forecast for each trail. We also include mountain bike options for the user in the event they are interested in biking and hiking.
 
@@ -41,4 +41,3 @@ Timeline:
 Deploy the skeleton:
 
 [Hikers-R-US](https://leximiller128.github.io/project-1-Hikers-R-US/)
-
