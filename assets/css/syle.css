@@ -12,15 +12,12 @@ p {
 }
 
 form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
+  margin: auto;
 }
 
 html {
-  background-image: url("https://source.unsplash.com/1600x1600/?landscape");
-  background-size: cover;
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
