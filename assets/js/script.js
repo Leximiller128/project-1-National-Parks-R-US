@@ -3,17 +3,26 @@
 //use open weather api to get the weather and use it to display the weather
 //var stateName =
 var apiParks =
-  "https://developer.nps.gov/api/v1/parks?q=${stateName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1";
+  "https://developer.nps.gov/api/v1/parks?parkCode=${fullName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1";
 fetch(apiParks)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
     console.log(data);
-    console.log(stateName);
     console.log(apiParks);
+    console.log(data.data[0].fullName);
+    fetchParkName(data[0].fullName);
   })
   .catch(function (err) {
     console.log(err);
   });
+
+// function fetchParkName(fullName) {
+//   fetch (
+//     `https://developer.nps.gov/api/v1/parks?parkCode=${fullName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
+//   )
+// }
+
 // use the entered state name to get the state park api to display the state parks in the state
+// api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
