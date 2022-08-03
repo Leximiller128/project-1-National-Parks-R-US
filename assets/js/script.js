@@ -77,7 +77,7 @@ function displayData() {
 
 function modalContent() {
   //add random array to modal in html
-  document.querySelector(".box").innerHTML = result;
+  document.querySelector(".modal-box").innerHTML = result;
 }
 //pull random item from array
 function getRandomItem(arr) {
