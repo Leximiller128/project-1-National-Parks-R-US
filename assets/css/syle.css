@@ -45,6 +45,8 @@ html {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  border: 1px solid aquamarine;
+  border-radius: 4px;
 }
 
 /* change font color of modal content */
