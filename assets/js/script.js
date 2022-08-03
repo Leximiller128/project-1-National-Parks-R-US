@@ -1,7 +1,7 @@
 //NPS API to pull full park name
-var cardcontent = document.getElementById("cardcontent")
-var searchbtn = document.getElementById("searchbtn")
-var cardfield = document.getElementById("cardfield")
+var cardcontent = document.getElementById("cardcontent");
+var searchbtn = document.getElementById("searchbtn");
+var cardfield = document.getElementById("cardfield");
 var apiParks =
   "https://developer.nps.gov/api/v1/parks?parkCode=${fullName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1";
 fetch(apiParks)
@@ -48,12 +48,12 @@ function displayData() {
     listEl.appendChild(feesEl);
     cardfield.appendChild(listEl);
   }
-};
+}
 
 // addEventListener("click", displayData(), {
 // appendChild(cardcontent)
 // }
-// ) 
+// )
 
 //NPS API to pull address, contact info, description of park
 
@@ -74,3 +74,8 @@ function displayData() {
 
 // document.querySelector(".searchbtn").addEventListener("click", function () {
 //   whateverwecallthis.search();
+
+function modalContent() {
+  //add random array to modal in html
+  document.querySelector(".box").innerHTML = result;
+}
