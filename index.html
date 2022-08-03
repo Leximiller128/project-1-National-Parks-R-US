@@ -13,51 +13,69 @@
   </head>
 
   <section class="box has-background-light">
-      <p class="title">
-        Adventurers!
-      </p>
-      <p class="subtitle">
-        Want to explore some of our National Parks?
-      </p>
-      <p>Check out the search bar!</p>
+    <p class="title">Adventurers!</p>
+    <p class="subtitle">Want to explore some of our National Parks?</p>
+    <p>Check out the search bar!</p>
   </section>
 
   <main>
     <section class="columns">
-        <section class="column is-one-third is-offset-one-third">   
-            <figure class="card has-background-light" id="card">
-                <section class="card-content">    
-                    <section class="content" id="cardcontent">   
-                        <section class="field" id="cardfield">
-                            <label class="label" id="label">Enter State:</label>
-                        </section>
-                        <section class="field is-grouped">   
-                        <section class="control" id="textbar">
-                                <input class="input is-primary" id="input" type="text" placeholder="Somewhere, USA">
-                            </section>
-                            <section class="control" id="searchbtn">
-                                <button class="button is-link">Search</button>
-                            </section>
-                        </section>
-                    </section>
+      <section class="column is-one-third is-offset-one-third">
+        <figure class="card has-background-light" id="card">
+          <section class="card-content">
+            <section class="content" id="cardcontent">
+              <section class="field" id="cardfield">
+                <label class="label" id="label">Enter State:</label>
+              </section>
+              <section class="field is-grouped">
+                <section class="control" id="textbar">
+                  <input
+                    class="input is-primary"
+                    id="input"
+                    type="text"
+                    placeholder="Somewhere, USA"
+                  />
                 </section>
-            </figure>
-        </section> 
+                <section class="control" id="searchbtn">
+                  <button class="button is-link">Search</button>
+                </section>
+              </section>
+            </section>
+          </section>
+        </figure>
+      </section>
     </section>
- 
+
     <section class="columns">
       <section class="column is-one-fourth is-offset-one-half">
         <section class="modal" id="modal">
-          <section class="modal-background">
-          
-          </section>
-          <section class="modal-content" id="modalcontent">
-
-          </section>
+          <section class="modal-background"></section>
+          <section class="modal-content" id="modalcontent"></section>
           <button class="modal-close is-large" aria-label="close"></button>
         </section>
       </section>
     </section>
+    <!-- change onclick to call modalContent function -->
+    <button
+      onclick="modalContent()"
+      class="js-modal-trigger is-active"
+      data-target="modal-js-example"
+      id="modal-button"
+    >
+      Fun facts!
+    </button>
+    <!-- second chunk of bulma modal html code -->
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <p>text</p>
+          <!-- Your content -->
+        </div>
+      </div>
+
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
   </main>
 
   <script src="./assets/js/script.js"></script>
