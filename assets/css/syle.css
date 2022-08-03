@@ -46,3 +46,8 @@ html {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+/* change font color of modal content */
+.modal-content {
+  color: aliceblue;
+}
