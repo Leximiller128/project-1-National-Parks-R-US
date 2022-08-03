@@ -5,11 +5,13 @@
   color: black;
 } */
 
+/* center and color title box */
 .title {
   text-align: center;
   color: black;
 }
 
+/* stylize <p> element in HTML */
 p {
   text-align: center;
   font-size: large;
@@ -24,12 +26,13 @@ p {
   margin-top: 5px;
 } */
 
+/* stylize and format random background image */
 html {
   background-image: url("https://source.unsplash.com/1600x900/?landscape");
   background-size: 100%;
   background-repeat: no-repeat;
 }
 
-h1 {
+/* h1 {
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
