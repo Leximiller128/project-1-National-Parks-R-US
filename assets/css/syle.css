@@ -45,4 +45,13 @@ html {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  border: 1px solid aquamarine;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aliceblue;
+}
+
+/* change font color of modal content */
+.modal-content {
+  color: aliceblue;
 }
