@@ -36,3 +36,13 @@ html {
 /* h1 {
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+/* center modal button and move 60% from top to unobstruct form */
+#modal-button {
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
