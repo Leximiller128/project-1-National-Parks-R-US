@@ -18,6 +18,18 @@ fetch(apiParks)
     console.log(err);
   });
 
+
+function: displayData()
+for (let index = 0; index < array.length; index++) {
+  const fullName = data.data[0].fullName[0]
+  const address = data.data[0].addresses[0]
+  const description = data.data[0].description[0]
+  const contacts = data.data[0].contacts.phoneNumbers[0]
+  const entranceFees = data.data[0].entranceFees[0]
+
+
+}
+
 //NPS API to pull address, contact info, description of park
 
 // const apiList = [];
@@ -36,4 +48,4 @@ fetch(apiParks)
 // api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
 
 document.querySelector(".searchbtn").addEventListener("click", function () {
-    whateverwecallthis.search();
+  whateverwecallthis.search();
