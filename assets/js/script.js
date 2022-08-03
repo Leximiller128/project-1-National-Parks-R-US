@@ -1,4 +1,7 @@
 //NPS API to pull full park name
+var cardcontent = document.getElementById("cardcontent")
+var searchbtn = document.getElementById("searchbtn")
+var cardfield = document.getElementById("cardfield")
 var apiParks =
   "https://developer.nps.gov/api/v1/parks?parkCode=${fullName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1";
 fetch(apiParks)
@@ -26,14 +29,31 @@ function displayData() {
     const contacts = data.data[0].contacts.phoneNumbers[0];
     const entranceFees = data.data[0].entranceFees[0];
     e.target.data;
+    var listEl = document.createElement("ul");
+    var nameEl = document.createElement("li");
+    var addressEl = document.createElement("li");
+    var addressEl = document.createElement("li");
+    var descEl = document.createElement("li");
+    var contactEl = document.createElement("li");
+    var feesEl = document.createElement("li");
+    nameEl.textContent = fullName;
+    listEl.appendChild(nameEl);
+    addressEl.textContent = address;
+    listEl.appendChild(addressEl);
+    descEl.textContent = description;
+    listEl.appendChild(descEl);
+    contactEl.textContent = contacts;
+    listEl.appendChild(contactEl);
+    feesEl.textContent = entranceFees;
+    listEl.appendChild(feesEl);
+    cardfield.appendChild(listEl);
   }
-}
-var cardcontent = document.getElementById("cardcontent")
-var searchbtn = document.getElementById("searchbtn")
-addEventListener("click", displayData(), {
-appendChild(cardcontent)
-}
-) 
+};
+
+// addEventListener("click", displayData(), {
+// appendChild(cardcontent)
+// }
+// ) 
 
 //NPS API to pull address, contact info, description of park
 
