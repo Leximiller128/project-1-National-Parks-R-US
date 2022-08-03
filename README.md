@@ -10,13 +10,15 @@
 
 National Park Fiends is an app that offers a user local National Parks and give the user a beautiful picture associated with the region. 
 
+Check out [National Parks-R-US](https://leximiller128.github.io/project-1-Hikers-R-US/)
+
 ### User Stories:
 
 > As an outdoor adventurer I want to find information on a local National Park.
 
 > As a user, when I search for a State, information about the National Parks gets shown.
 
-> As a user, when I click a more information button, a modal shows up with more details. 
+> As a user, when I click a "fun facts button, a modal shows up with a random fun fact about the park. 
 
 
 Roles/Wireframe:
@@ -35,10 +37,6 @@ Image API
 
 MVP:
 Information about our nation’s lovely National Parks
-
-Deploy the skeleton:
-
-[Hikers-R-US](https://leximiller128.github.io/project-1-Hikers-R-US/)
 
 ## Screenshots
 
