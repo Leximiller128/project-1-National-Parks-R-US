@@ -9,12 +9,17 @@ fetch(apiParks)
     console.log(data);
     console.log(apiParks);
     console.log(data.data[0].fullName);
+    console.log(data.data[0].addresses[0]);
+    console.log(data.data[0].description);
+    console.log(data.data[0].contacts.phoneNumbers[0]);
+    console.log(data.data[0].entranceFees[0]);
   })
   .catch(function (err) {
     console.log(err);
   });
 
 //NPS API to pull address, contact info, description of park
+
 // const apiList = [];
 // const matches = [];
 // const scoredMatches = [];
