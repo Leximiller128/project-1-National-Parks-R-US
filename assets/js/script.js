@@ -36,4 +36,4 @@ fetch(apiParks)
 // api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
 
 document.querySelector(".searchbtn").addEventListener("click", function () {
-  whateverwecallthis.search();
+    whateverwecallthis.search();
