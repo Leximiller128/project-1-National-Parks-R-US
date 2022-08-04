@@ -25,7 +25,9 @@
           <section class="card-content">
             <section class="content" id="cardcontent">
               <section class="field" id="cardfield">
-                <label class="label" id="label">Enter Park Name:</label>
+                <label class="label" id="label"
+                  >Enter State or Park Name:</label
+                >
               </section>
               <section class="field is-grouped">
                 <section class="control" id="textbar">
@@ -45,6 +47,10 @@
         </figure>
       </section>
     </section>
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Results <span id="search-term"></span></h2>
+      <div id="results-container" class="list-group"></div>
+    </div>
 
     <section class="columns">
       <section class="column is-one-fourth is-offset-one-half">
@@ -74,12 +80,6 @@
           <!-- Your content -->
         </div>
       </div>
-      <div class= "data-cards" data-card-container></div> 
-      <template data-card-template>
-        <section class="card"></div>
-            <section class="content" data-header></div>
-              <section class="field" data-body></div>
-      </template>
 
       <button class="modal-close is-large" aria-label="close"></button>
     </div>

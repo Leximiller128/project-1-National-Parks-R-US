@@ -1,10 +1,11 @@
+// NPS api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
+
 //NPS API to pull full park name
-var cardcontent = document.getElementById("cardcontent");
-var searchbtn = document.getElementById("searchbtn");
-var cardfield = document.getElementById("cardfield");
-const userCardTemplate = document.querySelector("[data-card-template]");
-const userCardContainer = document.querySelector("[data-card-container]");
+const cardcontent = document.getElementById("cardcontent");
+const searchbtn = document.getElementById("searchbtn");
+const cardfield = document.getElementById("cardfield");
 const inputValue = document.querySelector(".input");
+const searchResults = document.getElementById("results-conatiner");
 
 searchbtn.addEventListener("click", listHandler);
 
@@ -15,9 +16,8 @@ function listHandler(e) {
   console.log(userPark);
   searchParkName(userPark);
 }
-
 function searchParkName(userPark) {
-  var apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
+  const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
     .then((res) => res.json())
     .then((data) => {
@@ -28,28 +28,20 @@ function searchParkName(userPark) {
         const fullName = dataArray[index].fullName;
         console.log(fullName);
       }
-      // let fullName = data.data[0].fullName;
-      // console.log(fullName);
-      // data.data.forEach((fullName) => {
-      //   const card = userCardTemplate.content.cloneNode(true).children[0];
-      //   const header = card.querySelector("[data-header]");
-      //   const body = card.querySelector("[data-body]");
-      //   header.textContent = data.fullName;
-      //   userCardContainer.append(card);
-      //   return { fullName };
-      // });
     });
 }
+// .catch(function (error) {
+//   console.log(err);
+// });
 
-// .then(function (data) {
-//   console.log(data);
-//   console.log(apiParks);
-//   console.log(data.data[0].fullName);
-//   console.log(data.data[0].addresses[0]);
-//   console.log(data.data[0].description);
-//   console.log(data.data[0].contacts.phoneNumbers[0]);
-//   console.log(data.data[0].entranceFees[0]);
-// })
+// for (let index = 0; index < data.data[0].length; index++) {
+//   var searchParkName = array[index].fullName;
+
+//     var listEl = document.createElement("results");
+//     listEl.classList = "list-item flex-row justify-space-between align-center";
+//   }
+// }
+
 // .catch(function (err) {
 //   console.log(err);
 // });
@@ -80,13 +72,9 @@ function displayData() {
     feesEl.textContent = entranceFees;
     listEl.appendChild(feesEl);
     cardfield.appendChild(listEl);
+    console.log("this was hit");
   }
 }
-
-// api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
-
-// document.querySelector(".searchbtn").addEventListener("click", function () {
-//   whateverwecallthis.search();
 
 function modalContent() {
   //add random array to modal in html
