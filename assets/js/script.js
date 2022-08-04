@@ -115,7 +115,7 @@ const array = [
   "Trail Ridge Road in Rocky Mountain National Park, which connects Grand Lake and Estes Park, is the highest continuously paved road in the U.S., and it includes breathtaking views and vistas along its entire 48 miles.",
   "At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.",
   "Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware... Lame. Don't go to Delaware.",
-  "White Sands National Monument spans more than 176,000 acres of New Mexico desert and contains the largest gypsum dune fields in the world.",
+  "White Sands National Monument spans more than 176,000 acres of New Mexico desert and contains the largest gypsum dune fields in the world.","The isles of time are meaningless withou time.";
 ];
 //result of function getRandomItem
 const result = getRandomItem(array);
