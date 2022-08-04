@@ -2,24 +2,57 @@
 var cardcontent = document.getElementById("cardcontent");
 var searchbtn = document.getElementById("searchbtn");
 var cardfield = document.getElementById("cardfield");
-var apiParks =
-  "https://developer.nps.gov/api/v1/parks?parkCode=${fullName}&stateCode=&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1";
-fetch(apiParks)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    console.log(apiParks);
-    console.log(data.data[0].fullName);
-    console.log(data.data[0].addresses[0]);
-    console.log(data.data[0].description);
-    console.log(data.data[0].contacts.phoneNumbers[0]);
-    console.log(data.data[0].entranceFees[0]);
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
+const userCardTemplate = document.querySelector("[data-card-template]");
+const userCardContainer = document.querySelector("[data-card-container]");
+const inputValue = document.querySelector(".input");
+
+searchbtn.addEventListener("click", listHandler);
+
+function listHandler(e) {
+  e.preventDefault();
+
+  let userPark = inputValue.value.trim();
+  console.log(userPark);
+  searchParkName(userPark);
+}
+
+function searchParkName(userPark) {
+  var apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
+  fetch(apiParks)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      let dataArray = data.data;
+      console.log(dataArray);
+      for (let index = 0; index < dataArray.length; index++) {
+        const fullName = dataArray[index].fullName;
+        console.log(fullName);
+      }
+      // let fullName = data.data[0].fullName;
+      // console.log(fullName);
+      // data.data.forEach((fullName) => {
+      //   const card = userCardTemplate.content.cloneNode(true).children[0];
+      //   const header = card.querySelector("[data-header]");
+      //   const body = card.querySelector("[data-body]");
+      //   header.textContent = data.fullName;
+      //   userCardContainer.append(card);
+      //   return { fullName };
+      // });
+    });
+}
+
+// .then(function (data) {
+//   console.log(data);
+//   console.log(apiParks);
+//   console.log(data.data[0].fullName);
+//   console.log(data.data[0].addresses[0]);
+//   console.log(data.data[0].description);
+//   console.log(data.data[0].contacts.phoneNumbers[0]);
+//   console.log(data.data[0].entranceFees[0]);
+// })
+// .catch(function (err) {
+//   console.log(err);
+// });
 
 function displayData() {
   for (let index = 0; index < array.length; index++) {
@@ -49,26 +82,6 @@ function displayData() {
     cardfield.appendChild(listEl);
   }
 }
-
-// addEventListener("click", displayData(), {
-// appendChild(cardcontent)
-// }
-// )
-
-//NPS API to pull address, contact info, description of park
-
-// const apiList = [];
-// const matches = [];
-// const scoredMatches = [];
-// // traverse all apis, save matches
-// for (const [apiParks, apiInfo] of Object.entries(apiList)) {
-//   delete apiInfo.definitions;
-//   delete apiInfo.paths;
-//   const apiText = JSON.stringify(apiInfo);
-//   const nameMatch = apiParks.match(keywords);
-//   const apiInfoMatch = apiText.match(keywords);
-//   if (nameMatch || apiInfoMatch) matches.push({ apiParks, apiInfo });
-// }
 
 // api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1
 
