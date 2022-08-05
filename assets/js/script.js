@@ -5,7 +5,6 @@ const cardcontent = document.getElementById("cardcontent");
 const searchbtn = document.getElementById("searchbtn");
 const cardfield = document.getElementById("cardfield");
 const inputValue = document.querySelector(".input");
-const searchResults = document.getElementById("results-conatiner");
 
 //search button clicks
 searchbtn.addEventListener("click", listHandler);
@@ -15,6 +14,7 @@ inputValue.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     searchbtn.click();
+
 
     var searchHistory = {
       fullName: "",
@@ -32,7 +32,6 @@ inputValue.addEventListener("keyup", function (event) {
 function listHandler(e) {
   e.preventDefault();
   let userPark = inputValue.value.trim();
-  console.log(userPark);
   searchParkName(userPark);
 }
 
@@ -76,6 +75,20 @@ function searchParkName(userPark) {
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
+
+
+
+          
+          var searchHistory = { 
+            fullName: fullName,
+            address: address + city,
+            state: state,
+            postal: postal,
+            contacts: contacts
+          }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+
+
         }
       }
     });
