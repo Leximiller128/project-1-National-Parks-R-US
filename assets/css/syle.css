@@ -41,8 +41,8 @@ html {
 #modal-button {
   margin: 0;
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 45%;
+  left: 75%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   border: 1px solid aquamarine;
