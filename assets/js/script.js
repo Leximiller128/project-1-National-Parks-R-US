@@ -15,6 +15,7 @@ inputValue.addEventListener("keyup", function (event) {
     event.preventDefault();
     searchbtn.click();
 
+
     var searchHistory = {
       fullName: "",
       city: "",
@@ -74,6 +75,18 @@ function searchParkName(userPark) {
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
+
+
+          
+          var searchHistory = { 
+            fullName: fullName,
+            address: address + city,
+            state: state,
+            postal: postal,
+            contacts: contacts
+          }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+
         }
       }
     });
