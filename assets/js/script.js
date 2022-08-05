@@ -26,7 +26,29 @@ function searchParkName(userPark) {
       console.log(dataArray);
       for (let index = 0; index < dataArray.length; index++) {
         const fullName = dataArray[index].fullName;
+        const address = dataArray[index].addresses;
+        const description = dataArray[index].description;
+        const contacts = dataArray[index].contacts.phoneNumbers;
+        const entranceFees = dataArray[index].entranceFees;
         console.log(fullName);
+        var listEl = document.createElement("ul");
+        var nameEl = document.createElement("li");
+        var addressEl = document.createElement("li");
+        var addressEl = document.createElement("li");
+        var descEl = document.createElement("li");
+        var contactEl = document.createElement("li");
+       var feesEl = document.createElement("li");
+        nameEl.textContent = fullName;
+       listEl.appendChild(nameEl);
+       addressEl.textContent = address;
+       listEl.appendChild(addressEl);
+        descEl.textContent = description;
+       listEl.appendChild(descEl);
+        contactEl.textContent = contacts;
+        listEl.appendChild(contactEl);
+        feesEl.textContent = entranceFees;
+        listEl.appendChild(feesEl);
+        cardfield.appendChild(listEl);
       }
     });
 }
