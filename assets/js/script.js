@@ -16,6 +16,19 @@ inputValue.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     searchbtn.click();
+
+    var searchHistory = {
+      fullName: "",
+      city: "",
+      state: "",
+      postal: "",
+      description: "",
+      contacts: ""
+
+
+
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
   }
 });
 
@@ -27,6 +40,7 @@ function listHandler(e) {
   console.log(userPark);
   searchParkName(userPark);
 };
+
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=5&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -65,10 +79,18 @@ function searchParkName(userPark) {
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
+
+
+
         }
       }
     });
 }
+//store recent searches in local storage
+
+
+
+
 
 function clearCardField() {
   cardfield.innerHTML = "";
