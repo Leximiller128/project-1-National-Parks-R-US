@@ -15,7 +15,7 @@ function listHandler(e) {
   console.log(userPark);
   searchParkName(userPark);
   console.log(inputValue.value.typeof);
-  };
+};
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -45,6 +45,7 @@ function searchParkName(userPark) {
         contactEl.textContent = "Phone Number: " + contacts;
         listEl.appendChild(contactEl);
         cardfield.appendChild(listEl);
+        document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
       }
     });
 }
