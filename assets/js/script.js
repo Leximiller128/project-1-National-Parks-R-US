@@ -11,11 +11,11 @@ searchbtn.addEventListener("click", listHandler);
 
 function listHandler(e) {
   e.preventDefault();
-
   let userPark = inputValue.value.trim();
   console.log(userPark);
   searchParkName(userPark);
-}
+  console.log(inputValue.value.typeof);
+  };
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -26,28 +26,24 @@ function searchParkName(userPark) {
       console.log(dataArray);
       for (let index = 0; index < dataArray.length; index++) {
         const fullName = dataArray[index].fullName;
-        const address = dataArray[index].addresses;
+        const city = dataArray[index].addresses[0].city;
+        const address = dataArray[index].addresses[0].line1;
+        const postal = dataArray[index].addresses[0].postalCode;
+        const state = dataArray[index].addresses[0].stateCode;
         const description = dataArray[index].description;
-        const contacts = dataArray[index].contacts.phoneNumbers;
-        const entranceFees = dataArray[index].entranceFees;
+        const contacts = dataArray[index].contacts.phoneNumbers[0].phoneNumber;
         console.log(fullName);
         var listEl = document.createElement("ul");
         var nameEl = document.createElement("li");
         var addressEl = document.createElement("li");
-        var addressEl = document.createElement("li");
         var descEl = document.createElement("li");
         var contactEl = document.createElement("li");
-       var feesEl = document.createElement("li");
-        nameEl.textContent = fullName;
-       listEl.appendChild(nameEl);
-       addressEl.textContent = address;
-       listEl.appendChild(addressEl);
-        descEl.textContent = description;
-       listEl.appendChild(descEl);
-        contactEl.textContent = contacts;
+        nameEl.textContent = "Park Name: " + fullName;
+        listEl.appendChild(nameEl);
+        addressEl.textContent = "Address: " + address + ", " + city + ", " + state + ", " + postal;
+        listEl.appendChild(addressEl);
+        contactEl.textContent = "Phone Number: " + contacts;
         listEl.appendChild(contactEl);
-        feesEl.textContent = entranceFees;
-        listEl.appendChild(feesEl);
         cardfield.appendChild(listEl);
       }
     });
@@ -67,36 +63,6 @@ function searchParkName(userPark) {
 // .catch(function (err) {
 //   console.log(err);
 // });
-
-function displayData() {
-  for (let index = 0; index < array.length; index++) {
-    const fullName = data.data[0].fullName[0];
-    const address = data.data[0].addresses[0];
-    const description = data.data[0].description[0];
-    const contacts = data.data[0].contacts.phoneNumbers[0];
-    const entranceFees = data.data[0].entranceFees[0];
-    e.target.data;
-    var listEl = document.createElement("ul");
-    var nameEl = document.createElement("li");
-    var addressEl = document.createElement("li");
-    var addressEl = document.createElement("li");
-    var descEl = document.createElement("li");
-    var contactEl = document.createElement("li");
-    var feesEl = document.createElement("li");
-    nameEl.textContent = fullName;
-    listEl.appendChild(nameEl);
-    addressEl.textContent = address;
-    listEl.appendChild(addressEl);
-    descEl.textContent = description;
-    listEl.appendChild(descEl);
-    contactEl.textContent = contacts;
-    listEl.appendChild(contactEl);
-    feesEl.textContent = entranceFees;
-    listEl.appendChild(feesEl);
-    cardfield.appendChild(listEl);
-    console.log("this was hit");
-  }
-}
 
 function modalContent() {
   //add random array to modal in html
