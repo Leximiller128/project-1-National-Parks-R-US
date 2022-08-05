@@ -9,6 +9,8 @@ const searchResults = document.getElementById("results-conatiner");
 
 //search button clicks
 searchbtn.addEventListener("click", listHandler);
+searchbtn.addEventListener("click", clearCardField);
+
 
 //function to pull information from NPS API
 function listHandler(e) {
@@ -25,7 +27,7 @@ function searchParkName(userPark) {
       console.log(data);
       let dataArray = data.data;
       console.log(dataArray);
-      if (dataArray.length === 0){
+      if (dataArray.length === 0) {
         inputValue.classList.remove("is-primary");
         inputValue.classList.add("is-danger");
       }
@@ -55,8 +57,13 @@ function searchParkName(userPark) {
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
-        }}
+        }
+      }
     });
+}
+
+function clearCardField() {
+  cardfield.innerHTML = "";
 }
 
 function modalContent() {
