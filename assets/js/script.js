@@ -7,14 +7,17 @@ const cardfield = document.getElementById("cardfield");
 const inputValue = document.querySelector(".input");
 const searchResults = document.getElementById("results-conatiner");
 
+//search button clicks
 searchbtn.addEventListener("click", listHandler);
 
+//function to pull information from NPS API
 function listHandler(e) {
   e.preventDefault();
   let userPark = inputValue.value.trim();
   console.log(userPark);
   searchParkName(userPark);
   };
+}
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -23,9 +26,29 @@ function searchParkName(userPark) {
       console.log(data);
       let dataArray = data.data;
       console.log(dataArray);
-      if (dataArray.length === 0){
-        inputValue.classList.remove("is-primary");
-        inputValue.classList.add("is-danger");
+      for (let index = 0; index < dataArray.length; index++) {
+        const fullName = dataArray[index].fullName;
+        const city = dataArray[index].addresses[0].city;
+        const address = dataArray[index].addresses[0].line1;
+        const postal = dataArray[index].addresses[0].postalCode;
+        const state = dataArray[index].addresses[0].stateCode;
+        const description = dataArray[index].description;
+        const contacts = dataArray[index].contacts.phoneNumbers[0].phoneNumber;
+        console.log(fullName);
+        var listEl = document.createElement("ul");
+        var nameEl = document.createElement("li");
+        var addressEl = document.createElement("li");
+        var descEl = document.createElement("li");
+        var contactEl = document.createElement("li");
+        nameEl.textContent = "Park Name: " + fullName;
+        listEl.appendChild(nameEl);
+        addressEl.textContent =
+          "Address: " + address + ", " + city + ", " + state + ", " + postal;
+        listEl.appendChild(addressEl);
+        contactEl.textContent = "Phone Number: " + contacts;
+        listEl.appendChild(contactEl);
+        cardfield.appendChild(listEl);
+        document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
       }
       else {
         inputValue.classList.remove("is-primary");
@@ -55,21 +78,6 @@ function searchParkName(userPark) {
         }}
     });
 }
-// .catch(function (error) {
-//   console.log(err);
-// });
-
-// for (let index = 0; index < data.data[0].length; index++) {
-//   var searchParkName = array[index].fullName;
-
-//     var listEl = document.createElement("results");
-//     listEl.classList = "list-item flex-row justify-space-between align-center";
-//   }
-// }
-
-// .catch(function (err) {
-//   console.log(err);
-// });
 
 function modalContent() {
   //add random array to modal in html
