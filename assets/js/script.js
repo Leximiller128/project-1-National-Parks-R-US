@@ -16,8 +16,7 @@ function listHandler(e) {
   let userPark = inputValue.value.trim();
   console.log(userPark);
   searchParkName(userPark);
-  };
-}
+};
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -26,29 +25,9 @@ function searchParkName(userPark) {
       console.log(data);
       let dataArray = data.data;
       console.log(dataArray);
-      for (let index = 0; index < dataArray.length; index++) {
-        const fullName = dataArray[index].fullName;
-        const city = dataArray[index].addresses[0].city;
-        const address = dataArray[index].addresses[0].line1;
-        const postal = dataArray[index].addresses[0].postalCode;
-        const state = dataArray[index].addresses[0].stateCode;
-        const description = dataArray[index].description;
-        const contacts = dataArray[index].contacts.phoneNumbers[0].phoneNumber;
-        console.log(fullName);
-        var listEl = document.createElement("ul");
-        var nameEl = document.createElement("li");
-        var addressEl = document.createElement("li");
-        var descEl = document.createElement("li");
-        var contactEl = document.createElement("li");
-        nameEl.textContent = "Park Name: " + fullName;
-        listEl.appendChild(nameEl);
-        addressEl.textContent =
-          "Address: " + address + ", " + city + ", " + state + ", " + postal;
-        listEl.appendChild(addressEl);
-        contactEl.textContent = "Phone Number: " + contacts;
-        listEl.appendChild(contactEl);
-        cardfield.appendChild(listEl);
-        document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
+      if (dataArray.length === 0){
+        inputValue.classList.remove("is-primary");
+        inputValue.classList.add("is-danger");
       }
       else {
         inputValue.classList.remove("is-primary");
@@ -75,6 +54,7 @@ function searchParkName(userPark) {
           contactEl.textContent = "Phone Number: " + contacts;
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
+          document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
         }}
     });
 }
