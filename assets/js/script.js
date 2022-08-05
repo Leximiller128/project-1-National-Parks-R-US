@@ -11,7 +11,6 @@ const searchResults = document.getElementById("results-conatiner");
 searchbtn.addEventListener("click", listHandler);
 searchbtn.addEventListener("click", clearCardField);
 
-
 inputValue.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -23,15 +22,11 @@ inputValue.addEventListener("keyup", function (event) {
       state: "",
       postal: "",
       description: "",
-      contacts: ""
-
-
-
-    }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+      contacts: "",
+    };
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
   }
 });
-
 
 //function to pull information from NPS API
 function listHandler(e) {
@@ -39,7 +34,7 @@ function listHandler(e) {
   let userPark = inputValue.value.trim();
   console.log(userPark);
   searchParkName(userPark);
-};
+}
 
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=5&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
@@ -52,8 +47,7 @@ function searchParkName(userPark) {
       if (dataArray.length === 0) {
         inputValue.classList.remove("is-primary");
         inputValue.classList.add("is-danger");
-      }
-      else {
+      } else {
         inputValue.classList.remove("is-primary");
         inputValue.classList.remove("is-danger");
         inputValue.classList.add("is-success");
@@ -64,7 +58,9 @@ function searchParkName(userPark) {
           const postal = dataArray[index].addresses[0].postalCode;
           const state = dataArray[index].addresses[0].stateCode;
           const description = dataArray[index].description;
-          const contacts = dataArray[index].contacts.phoneNumbers[0] ? dataArray[index].contacts.phoneNumbers[0].phoneNumber : "";
+          const contacts = dataArray[index].contacts.phoneNumbers[0]
+            ? dataArray[index].contacts.phoneNumbers[0].phoneNumber
+            : "";
           console.log(fullName);
           var listEl = document.createElement("ul");
           var nameEl = document.createElement("li");
@@ -73,24 +69,18 @@ function searchParkName(userPark) {
           var contactEl = document.createElement("li");
           nameEl.textContent = "Park Name: " + fullName;
           listEl.appendChild(nameEl);
-          addressEl.textContent = "Address: " + address + ", " + city + ", " + state + ", " + postal;
+          addressEl.textContent =
+            "Address: " + address + ", " + city + ", " + state + ", " + postal;
           listEl.appendChild(addressEl);
           contactEl.textContent = "Phone Number: " + contacts;
           listEl.appendChild(contactEl);
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
-
-
-
         }
       }
     });
 }
 //store recent searches in local storage
-
-
-
-
 
 function clearCardField() {
   cardfield.innerHTML = "";
@@ -121,8 +111,10 @@ const array = [
   "National parks are home to life on a big scale: Sequoia trees are some of the world's largest living things, and Alaskan brown bears are some of the world's largest carnivores.",
   "Everglades National Park protects more than 25% of Florida's original everglades (subtropical wetlands).",
   "Trail Ridge Road in Rocky Mountain National Park, which connects Grand Lake and Estes Park, is the highest continuously paved road in the U.S., and it includes breathtaking views and vistas along its entire 48 miles.",
+  "Blue is my favorite color.  Wait, no, yellow.",
   "At 1,932 feet deep, Crater Lake National Park in Oregon is the deepest lake in the U.S.",
   "Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware... Lame. Don't go to Delaware.",
+  "The airspeed velocity of a (European) unladen swallow is roughly 11 meters per second, or 24 miles per hour, beatings its wings 7-9 times per second (rather than 43).",
   "White Sands National Monument spans more than 176,000 acres of New Mexico desert and contains the largest gypsum dune fields in the world.",
 ];
 //result of function getRandomItem
