@@ -12,6 +12,14 @@ searchbtn.addEventListener("click", listHandler);
 searchbtn.addEventListener("click", clearCardField);
 
 
+inputValue.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    searchbtn.click();
+  }
+});
+
+
 //function to pull information from NPS API
 function listHandler(e) {
   e.preventDefault();
@@ -20,7 +28,7 @@ function listHandler(e) {
   searchParkName(userPark);
 };
 function searchParkName(userPark) {
-  const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
+  const apiParks = `https://developer.nps.gov/api/v1/parks?limit=5&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
     .then((res) => res.json())
     .then((data) => {
