@@ -7,15 +7,17 @@ const cardfield = document.getElementById("cardfield");
 const inputValue = document.querySelector(".input");
 const searchResults = document.getElementById("results-conatiner");
 
+//search button clicks
 searchbtn.addEventListener("click", listHandler);
 
+//function to pull information from NPS API
 function listHandler(e) {
   e.preventDefault();
   let userPark = inputValue.value.trim();
   console.log(userPark);
   searchParkName(userPark);
   console.log(inputValue.value.typeof);
-};
+}
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=10&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -40,7 +42,8 @@ function searchParkName(userPark) {
         var contactEl = document.createElement("li");
         nameEl.textContent = "Park Name: " + fullName;
         listEl.appendChild(nameEl);
-        addressEl.textContent = "Address: " + address + ", " + city + ", " + state + ", " + postal;
+        addressEl.textContent =
+          "Address: " + address + ", " + city + ", " + state + ", " + postal;
         listEl.appendChild(addressEl);
         contactEl.textContent = "Phone Number: " + contacts;
         listEl.appendChild(contactEl);
@@ -49,21 +52,6 @@ function searchParkName(userPark) {
       }
     });
 }
-// .catch(function (error) {
-//   console.log(err);
-// });
-
-// for (let index = 0; index < data.data[0].length; index++) {
-//   var searchParkName = array[index].fullName;
-
-//     var listEl = document.createElement("results");
-//     listEl.classList = "list-item flex-row justify-space-between align-center";
-//   }
-// }
-
-// .catch(function (err) {
-//   console.log(err);
-// });
 
 function modalContent() {
   //add random array to modal in html
