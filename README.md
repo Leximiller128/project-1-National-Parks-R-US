@@ -24,10 +24,11 @@ Check it out at [National Parks-R-US](https://leximiller128.github.io/project-1-
 
 ### Tools
 
-CSS Framework:
+*CSS Framework:*
 [Bulma](https://bulma.io/)
 
-APIS:
+*API'S:*
+
 [National Park APIs](https://www.nps.gov/subjects/developer/api-documentation.htm)
 
 [Image API](https://unsplash.com/developers)
@@ -51,3 +52,5 @@ A sample of the "Did you know" modal.
 * The National Park API offers a multitude of options to pull from things to do, weather, and tours. A first expansion would be to select a specfic park and pull whatever information the user could desire from that API.
 
 * A snag in our development came in using Local Storage. Currently the app will store the most recent pull from a search as an object into storage but does not do anything with said object. A button/page to pull up past search results would be a nice addition as well.
+
+* A minor annoyance we ran into is that the way the phone numbers are logged in the API means some are formatted in a 123-456-7890 and some have no dashes. An improvement in the app could have a uniform style.
