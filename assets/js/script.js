@@ -10,11 +10,13 @@ const inputValue = document.querySelector(".input");
 searchbtn.addEventListener("click", listHandler);
 searchbtn.addEventListener("click", clearCardField);
 
+//enter key works like the click function
 inputValue.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     searchbtn.click();
 
+    //variables for search history
     var searchHistory = {
       fullName: "",
       city: "",
@@ -33,7 +35,7 @@ function listHandler(e) {
   let userPark = inputValue.value.trim();
   searchParkName(userPark);
 }
-
+//function to pull requested objects from API
 function searchParkName(userPark) {
   const apiParks = `https://developer.nps.gov/api/v1/parks?limit=5&q=${userPark}&api_key=MVj5HVGtvVizx4wzcJ24hUmEImkvRT5DF2t8dyk1`;
   fetch(apiParks)
@@ -59,6 +61,7 @@ function searchParkName(userPark) {
           const contacts = dataArray[index].contacts.phoneNumbers[0]
             ? dataArray[index].contacts.phoneNumbers[0].phoneNumber
             : "";
+          //displaying the pulled objects to the page
           console.log(fullName);
           var listEl = document.createElement("ul");
           var nameEl = document.createElement("li");
@@ -75,6 +78,7 @@ function searchParkName(userPark) {
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
 
+          //adding to local storage
           var searchHistory = {
             fullName: fullName,
             address: address + city,
