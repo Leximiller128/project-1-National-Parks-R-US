@@ -15,7 +15,6 @@ inputValue.addEventListener("keyup", function (event) {
     event.preventDefault();
     searchbtn.click();
 
-
     var searchHistory = {
       fullName: "",
       city: "",
@@ -76,19 +75,14 @@ function searchParkName(userPark) {
           cardfield.appendChild(listEl);
           document.body.style.backgroundImage = `url(https://source.unsplash.com/1600x900/?${inputValue.value})`;
 
-
-
-          
-          var searchHistory = { 
+          var searchHistory = {
             fullName: fullName,
             address: address + city,
             state: state,
             postal: postal,
-            contacts: contacts
-          }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
-
-
+            contacts: contacts,
+          };
+          localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
         }
       }
     });
@@ -129,6 +123,7 @@ const array = [
   "Only one state in the country is not lucky enough to currently have either a national park or national monument. It is actually the country’s first state, Delaware... Lame. Don't go to Delaware.",
   "The airspeed velocity of a (European) unladen swallow is roughly 11 meters per second, or 24 miles per hour, beatings its wings 7-9 times per second (rather than 43).",
   "White Sands National Monument spans more than 176,000 acres of New Mexico desert and contains the largest gypsum dune fields in the world.",
+  "To be fair to Deleware, First State National Monument was redesignated as the First State National Historical Park in 2015.  The park extends partly into Pennsylvania, but, still.  Good on them",
 ];
 //result of function getRandomItem
 const result = getRandomItem(array);
