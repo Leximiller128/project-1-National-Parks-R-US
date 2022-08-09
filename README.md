@@ -4,7 +4,7 @@
 
 National Park Fiends is an app that offers a user local National Parks and give the user a beautiful picture associated with the region. Through the app users can find the name of 5 parks based off of their search and get the name, address, and phone number of each parks.
 
-Check it out at [National Parks-R-US](https://leximiller128.github.io/project-1-Hikers-R-US/)
+Check it out at [National Parks-R-US](https://leximiller128.github.io/project-1-National-Parks-R-US/)
 
 ## User Stories:
 
