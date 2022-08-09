@@ -21,17 +21,19 @@ Check out [National Parks-R-US](https://leximiller128.github.io/project-1-Hikers
 > As a user, when I click a "fun facts button, a modal shows up with a random fun fact about the park. 
 
 
-Roles/Wireframe:
+### Collaborators and Their Roles
 
 * Lexi- GitHub Guru, JS Co-Primary --GitHub: [Leximiller128](https://github.com/Leximiller128)
 * Seth- HTML, Project Manager --GitHub: [Capt-Turner](https://github.com/Capt-Turner)
 * Garret- API Wizard, JS Co-Primary --GitHub: [Garretn4](https://github.com/Garretn4)
 * Kaleb- CSS, Presentation Proctor --GitHub: [Kalebritt](https://github.com/kalebritt)
 
+### Tools
+
 CSS Framework:
 Bulma
 
-API:
+APIS:
 National Park APIs,
 Image API
 
@@ -41,3 +43,7 @@ Information about our nation’s lovely National Parks
 ## Screenshots
 
 ![Homepage](/assets/images/Example%20Homepage.png)
+
+![Example](/assets/images/Example%20Search.png)
+
+![FunFact](/assets/images/Modal%20Example.png)
